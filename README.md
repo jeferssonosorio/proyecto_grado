@@ -1,13 +1,15 @@
 # proyecto_grado
 Repositorio para proyecto de grato "Physio Story"
 
-Repositorio creado para desarrollo proyecto de grato "Physio Story"
+Repositorio creado para desarrollo proyecto de grado "Physio Story"
 
-Setup The first thing to do is to clone the repository:
+## Setup
+The first thing to do is to clone the repository:
 
+```shell
 HTTP
 $ git clone https://github.com/jeferssonosorio/proyecto_grado.git
-
+```
 or
 SSH
 $ git clone git@github.com:jeferssonosorio/proyecto_grado.git
