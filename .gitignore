@@ -1,2 +1,2 @@
 .idea/
-physio_story/__pycache__/
+*__pycache__/
