@@ -1,1 +1,2 @@
 import local_apps.historia_clinica.models.paciente
+import local_apps.historia_clinica.models.patologia
