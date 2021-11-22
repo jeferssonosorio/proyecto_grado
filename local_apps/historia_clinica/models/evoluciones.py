@@ -8,7 +8,7 @@ from local_apps.historia_clinica.models.procedimiento import Procedimiento
 class Evoluciones(models.Model):
     descripcion = models.TextField()
     fecha = models.DateField(default=datetime.date.today)
-    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True)
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     procedimiento = models.ManyToManyField(Procedimiento)
 
     def __str__(self):
