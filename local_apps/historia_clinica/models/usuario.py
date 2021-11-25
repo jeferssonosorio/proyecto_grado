@@ -6,7 +6,7 @@ from local_apps.historia_clinica.models.tipoDocIdentificacion import (
 
 # Create your models here.
 class Usuario(models.Model):
-    # Elcampo usuariohace referencia al Usuario y Contraseña de Logueo
+    # Elcampo usuario hace referencia al Usuario y Contraseña de Logueo
     usuario = models.CharField(max_length=30)
     # contrasenia = models.CharField(max_length=30)
     correo = models.EmailField(max_length=30)
