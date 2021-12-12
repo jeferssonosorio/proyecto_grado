@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "local_apps.historia_clinica",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
