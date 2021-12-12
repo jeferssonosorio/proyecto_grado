@@ -1,8 +1,12 @@
 from django.db import models
+from django_extensions.db.models import TimeStampedModel
 from local_apps.historia_clinica.models.patologia import Patologia
+from local_apps.historia_clinica.models.tipoDocIdentificacion import (
+    TipoDocIdentificacion,
+)
 
 # Create your models here.
-class Paciente(models.Model):
+class Paciente(TimeStampedModel):
 
     O_NEGATIVO = 1
     O_POSITIVO = 2
@@ -28,6 +32,9 @@ class Paciente(models.Model):
     apellido_1 = models.CharField(max_length=30)
     apellido_2 = models.CharField(max_length=30, blank=True, null=True)
     documento = models.CharField(max_length=20, unique=True, null=True)
+    tipo_doc_identificacion = models.ForeignKey(
+        TipoDocIdentificacion, on_delete=models.CASCADE
+    )
     telefono = models.CharField(max_length=15)
     direccion = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
@@ -37,7 +44,7 @@ class Paciente(models.Model):
 
     # Definida en Kilogramos
     peso = models.DecimalField(max_digits=4, decimal_places=2, default=None)
-    patologia = models.ManyToManyField(Patologia)
+    patologia = models.ManyToManyField(Patologia, blank=True)
 
     def __str__(self):
         return "{} {} {}".format(
