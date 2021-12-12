@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "local_apps.historia_clinica",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
