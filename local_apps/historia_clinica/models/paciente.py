@@ -1,12 +1,11 @@
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from local_apps.historia_clinica.models.patologia import Patologia
-from local_apps.historia_clinica.models.tipoDocIdentificacion import (
-    TipoDocIdentificacion,
-)
+from local_apps.historia_clinica.models.persona import Persona
+
 
 # Create your models here.
-class Paciente(TimeStampedModel):
+class Paciente(Persona, TimeStampedModel):
 
     O_NEGATIVO = 1
     O_POSITIVO = 2
@@ -27,17 +26,9 @@ class Paciente(TimeStampedModel):
         (AB_NEGATIVO, "AB-"),
         (AB_POSITIVO, "AB+"),
     ]
-
-    nombre = models.CharField(max_length=30)
-    apellido_1 = models.CharField(max_length=30)
-    apellido_2 = models.CharField(max_length=30, blank=True, null=True)
-    documento = models.CharField(max_length=20, unique=True, null=True)
-    tipo_doc_identificacion = models.ForeignKey(
-        TipoDocIdentificacion, on_delete=models.CASCADE
-    )
+    email = models.EmailField(blank=True, null=True)
     telefono = models.CharField(max_length=15)
     direccion = models.CharField(max_length=20, blank=True, null=True)
-    email = models.EmailField(blank=True, null=True)
     grupo_sanguineo = models.IntegerField(choices=GRUPOS_SANGUINEOS)
     # Definida en metros
     estartura = models.DecimalField(max_digits=3, decimal_places=2, default=None)
