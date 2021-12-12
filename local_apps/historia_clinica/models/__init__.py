@@ -4,5 +4,4 @@ import local_apps.historia_clinica.models.evoluciones
 import local_apps.historia_clinica.models.paciente
 import local_apps.historia_clinica.models.patologia
 import local_apps.historia_clinica.models.procedimiento
-import local_apps.historia_clinica.models.tipoDocIdentificacion
 import local_apps.historia_clinica.models.usuario

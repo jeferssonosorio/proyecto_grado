@@ -6,9 +6,7 @@ from local_apps.historia_clinica.models.paciente import Paciente
 from local_apps.historia_clinica.models.procedimiento import Procedimiento
 from local_apps.historia_clinica.models.patologia import Patologia
 from local_apps.historia_clinica.models.usuario import Usuario
-from local_apps.historia_clinica.models.tipoDocIdentificacion import (
-    TipoDocIdentificacion,
-)
+
 
 # Register your models here.
 admin.site.register(
@@ -17,7 +15,6 @@ admin.site.register(
         Paciente,
         Patologia,
         Procedimiento,
-        TipoDocIdentificacion,
         Usuario,
         Afecciones,
         Diagnostico,

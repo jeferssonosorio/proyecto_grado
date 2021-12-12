@@ -3,9 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django_extensions.db.models import TimeStampedModel
 from local_apps.historia_clinica.managers import UsuarioManager
-from local_apps.historia_clinica.models.tipoDocIdentificacion import (
-    TipoDocIdentificacion,
-)
+from local_apps.historia_clinica.models.persona import TIPOS_DOCUMENTOS_IDENTIFICACION
 
 
 # Create your models here.
@@ -18,10 +16,10 @@ class Usuario(AbstractUser, TimeStampedModel):
         db_index=True, default=uuid.uuid4, editable=False, unique=True
     )
     email = models.EmailField(unique=True)
-    tipo_doc_identificacion = models.ForeignKey(
-        TipoDocIdentificacion, on_delete=models.CASCADE
+    documento = models.CharField(max_length=20, unique=True, null=True)
+    tipo_documento_identificacion = models.CharField(
+        choices=TIPOS_DOCUMENTOS_IDENTIFICACION, max_length=2, default="CC"
     )
-    doc_identificacion = models.CharField(max_length=20, unique=True)
     objects = UsuarioManager()
 
     class Meta:
