@@ -16,7 +16,7 @@ class Usuario(AbstractUser, TimeStampedModel):
         db_index=True, default=uuid.uuid4, editable=False, unique=True
     )
     email = models.EmailField(unique=True)
-    documento = models.CharField(max_length=20, unique=True, null=True)
+    documento = models.CharField(max_length=20, unique=True)
     tipo_documento_identificacion = models.CharField(
         choices=TIPOS_DOCUMENTOS_IDENTIFICACION, max_length=2, default="CC"
     )
