@@ -4,12 +4,14 @@ from local_apps.historia_clinica.views.evoluciones_views import EvolucionesViewS
 from local_apps.historia_clinica.views.usuario_views import UsuarioViewSet
 from local_apps.historia_clinica.views.procedimiento_views import ProcedimientoViewSet
 from local_apps.historia_clinica.views.paciente_views import PacienteViewSet
+from local_apps.historia_clinica.views.patologia_views import PatologiaViewSet
 
 router = routers.DefaultRouter()
 router.register(r"evoluciones", EvolucionesViewSet)
 router.register(r"usuarios", UsuarioViewSet)
 router.register(r"procedimientos", ProcedimientoViewSet)
 router.register(r"pacientes", PacienteViewSet)
+router.register(r"patologia", PatologiaViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
