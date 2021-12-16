@@ -20,7 +20,7 @@ class Persona(models.Model):
     tipo_documento_identificacion = models.CharField(
         choices=TIPOS_DOCUMENTOS_IDENTIFICACION, max_length=2
     )
-    documento = models.CharField(max_length=20, unique=True, null=True)
+    documento = models.CharField(max_length=20, unique=True)
 
     class Meta:
         abstract = True
